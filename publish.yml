@@ -1,0 +1,28 @@
+---
+- name: Pull Docker Image From DockerHub
+  hosts: localhost
+  remote_user: karnadevsinhzala
+  become: false
+  tasks:
+    - name: Pull Docker Image
+      docker_image:
+        name: "karnadevsinhzala9/calcsci:{{DOCKER_TAG}}"
+        source: pull
+      register: docker_pull_result
+
+    - name: Display Docker Pull Request
+      debug:
+        var: docker_pull_result
+
+    - name: Start Docker Service
+      service:
+        name: docker
+        state: started
+
+    - name: Running Container
+      docker_container:
+        name: calculator
+        image: karnadevsinhzala9/calcsci:{{DOCKER_TAG}}
+        tty: yes
+        interactive: yes
+        command: /bin/bash
