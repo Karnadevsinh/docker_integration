@@ -14,11 +14,6 @@
       debug:
         var: docker_pull_result
 
-    - name: Start Docker Service
-      service:
-        name: docker
-        state: started
-
     - name: Running Container
       docker_container:
         name: testJar
