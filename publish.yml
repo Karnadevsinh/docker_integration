@@ -21,7 +21,7 @@
 
     - name: Running Container
       docker_container:
-        name: calculator
+        name: testJar
         image: karnadevsinhzala9/calcsci:{{DOCKER_TAG}}
         tty: yes
         interactive: yes
