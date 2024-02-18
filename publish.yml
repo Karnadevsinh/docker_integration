@@ -6,7 +6,7 @@
   tasks:
     - name: Pull Docker Image
       docker_image:
-        name: "karnadevsinhzala9/calcsci:{{DOCKER_TAG}}"
+        name: "karnadevsinh9/calcsci:{{DOCKER_TAG}}"
         source: pull
       register: docker_pull_result
 
@@ -22,7 +22,7 @@
     - name: Running Container
       docker_container:
         name: testJar
-        image: karnadevsinhzala9/calcsci:{{DOCKER_TAG}}
+        image: karnadevsinh9/calcsci:{{DOCKER_TAG}}
         tty: yes
         interactive: yes
         command: /bin/bash
