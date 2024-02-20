@@ -1,7 +1,22 @@
 ---
+- name: Check if Docker is installed
+  hosts: 35.154.25.107
+  become: true
+  tasks:
+    - name: Check if Docker is installed
+      command: docker --version
+      ignore_errors: true
+      register: docker_check
+
+    - name: Install Docker if not installed
+      apt:
+        name: docker.io
+        state: present
+      when: docker_check.rc != 0
+
 - name: Pull Docker Image From DockerHub
-  hosts: localhost
-  remote_user: karnadevsinhzala
+  hosts: 35.154.25.107
+  remote_user: ubuntu
   become: false
   tasks:
     - name: Pull Docker Image

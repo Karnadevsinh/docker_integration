@@ -1,3 +1,1 @@
-ansible_host=localhost
-ansible_user=karnadevsinhzala
-ansible_ssh_pass=Karan@macair9
+172.31.37.217 ansible_user=ubuntu
