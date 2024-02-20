@@ -61,7 +61,11 @@
       debug:
         var: docker_pull_result
 
-    - name: Running container
-      shell: docker run -it -d --name calc karnadevsinh9/calcsci:{{DOCKER_TAG}}
-
+    - name: Running Container
+      docker_container:
+        name: calculator
+        image: karnadevsinh9/calcsci:{{DOCKER_TAG}}
+        tty: yes
+        interactive: yes
+        command: /bin/bash
 
