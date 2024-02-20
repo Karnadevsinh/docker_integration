@@ -62,6 +62,6 @@
         var: docker_pull_result
 
     - name: Running container
-      shell: docker run -it -d --name calculator karnadevsinh9/calcsci:{{DOCKER_TAG}}
+      shell: docker run -it -d karnadevsinh9/calcsci:{{DOCKER_TAG}}
 
 
