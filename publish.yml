@@ -13,6 +13,8 @@
         name: docker.io
         state: present
       when: docker_check.rc != 0
+      become: true
+      become_user: root
 
 - name: Pull Docker Image From DockerHub
   hosts: 35.154.25.107
