@@ -1,3 +1,6 @@
-FROM openjdk-11-jre-headless
+# Install OpenJDK-11
+RUN apt-get update && \
+    apt-get install -y openjdk-11-jre-headless && \
+    apt-get clean;
 
 COPY target/dockerIntegration-1.0-SNAPSHOT.jar /demo.jar
