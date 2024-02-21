@@ -62,10 +62,9 @@
         var: docker_pull_result
 
     - name: Running Container
-      docker_container:
-        name: calculator
-        image: karnadevsinh9/calcsci:{{DOCKER_TAG}}
-        tty: true
-        interactive: true
-        command: /bin/bash
+      version: '3'
+      services:
+        my_container:
+          image: karnadevsinh9/calcsci:{{DOCKER_TAG}}
+          command: [ "tail", "-f", "/dev/null" ]
 
