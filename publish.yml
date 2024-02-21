@@ -61,10 +61,11 @@
       debug:
         var: docker_pull_result
 
-    - name: Start Docker container
+    - name: Running Container
       docker_container:
-        name: calc
+        name: calculator
         image: karnadevsinh9/calcsci:{{DOCKER_TAG}}
-        state: started
-        command: tail -f /dev/null
+        tty: yes
+        interactive: yes
+        command: /bin/bash
 
