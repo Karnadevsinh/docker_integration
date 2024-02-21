@@ -61,8 +61,7 @@
       debug:
         var: docker_pull_result
 
-    - name: Running Container
-      version: '3'
+    - version: '3'
       services:
         my_container:
           image: karnadevsinh9/calcsci:{{DOCKER_TAG}}
