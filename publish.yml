@@ -61,9 +61,10 @@
       debug:
         var: docker_pull_result
 
-    - version: '3'
-      services:
-        my_container:
-          image: karnadevsinh9/calcsci:{{DOCKER_TAG}}
-          command: [ "tail", "-f", "/dev/null" ]
+    - name: Start Docker container
+      docker_container:
+        name: calc
+        image: karnadevsinh9/calcsci:{{DOCKER_TAG}}
+        state: started
+        command: tail -f /dev/null
 
