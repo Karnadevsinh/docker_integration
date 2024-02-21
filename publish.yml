@@ -65,7 +65,8 @@
       docker_container:
         name: calculator
         image: karnadevsinh9/calcsci:{{DOCKER_TAG}}
-        tty: yes
-        interactive: yes
+        stdin_open: true
+        tty: true
+        interactive: true
         command: /bin/bash
 
