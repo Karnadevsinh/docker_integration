@@ -65,7 +65,7 @@
       docker_container:
         name: calculator
         image: karnadevsinh9/calcsci:{{DOCKER_TAG}}
+        state: started
         tty: yes
         interactive: yes
-        command: java -jar demo.jar
 
