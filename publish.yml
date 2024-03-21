@@ -67,5 +67,5 @@
         image: karnadevsinh9/calcsci:{{DOCKER_TAG}}
         tty: yes
         interactive: yes
-        command: /bin/bash
+        command: java -jar demo.jar
 
