@@ -73,6 +73,9 @@ public class Main {
         scan.close();
     }
     public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Press Enter key to start the application\n");
+        scanner.nextLine();
         calculator();
     }
 }
